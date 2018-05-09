@@ -117,6 +117,12 @@ ifeq ($(USER_BUILD_VARIANT),true)
   DEFINES += USER_BUILD_VARIANT=1
 endif
 
+ifeq ($(TARGET_USE_SYSTEM_AS_ROOT_IMAGE),1)
+  DEFINES += TARGET_USE_SYSTEM_AS_ROOT_IMAGE=1
+else
+  DEFINES += TARGET_USE_SYSTEM_AS_ROOT_IMAGE=0
+endif
+
 # these need to be filled out by the project/target/platform rules.mk files
 TARGET :=
 PLATFORM :=
