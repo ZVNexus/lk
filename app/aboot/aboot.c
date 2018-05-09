@@ -1091,6 +1091,7 @@ int boot_linux_from_mmc(void)
 	if (!boot_into_recovery) {
 		index = partition_get_index("boot");
 		ptn = partition_get_offset(index);
+		src = skip_ramfs;
 		if(ptn == 0) {
 			dprintf(CRITICAL, "ERROR: No boot partition found\n");
                     return -1;
